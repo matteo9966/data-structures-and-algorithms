@@ -1,15 +1,21 @@
 # ALGORITHMS EXERCISES!
+ exercises from Colt Steele JavaScript Algorithms and Data Structures Masterclass
+---
 
-- exercises from Colt Steele JavaScript Algorithms and Data Structures Masterclass
- 
+### beginner serction
+
 - frequency counter pattern
-
+- multiple pointer pattern
+- sliding window pattern
  
  Exercises are:
 
+```
 exercises
 |
 |-beginner
-| |-1-valid-anagram.js
-| |-2-count-unique-values.js
+| |-1-valid-anagram.js //frequency counter
+| |-2-count-unique-values.js //multiple pointer pattern
+| |-3-max-subarray-sum.js //sliding window 
+```
 

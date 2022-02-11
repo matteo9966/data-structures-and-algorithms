@@ -1,3 +1,4 @@
+//#TODO: fai l'esercizio del 2-count-unique usando l'algoritmo di colt
 function countUniqueValues(arr = []) {
   let counter = 0; //the counter that keeps track
   for (let i = 0; i <= arr.length - 2; ) {
@@ -18,5 +19,9 @@ function countUniqueValues(arr = []) {
 return counter
 }
 
-const cout=countUniqueValues([1, 1, 1, 2, 2,3,3]);
+const cout=countUniqueValues([-1, -1, 1, 2, 2,3,3]);
 console.log(cout);
+
+function countUniqueValues2(){
+    //add alternative solution
+}
