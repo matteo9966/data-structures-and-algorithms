@@ -17,5 +17,10 @@ exercises
 | |-1-valid-anagram.js //frequency counter
 | |-2-count-unique-values.js //multiple pointer pattern
 | |-3-max-subarray-sum.js //sliding window 
+| |-optional
+|   |-1-same-frequency.js
+|   |-2-are-there-duplicates.js
+|   |-3-
+
 ```
 
