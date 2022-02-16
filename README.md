@@ -20,7 +20,11 @@ exercises
 | |-optional
 |   |-1-same-frequency.js
 |   |-2-are-there-duplicates.js
-|   |-3-
+|   |-3-average-pair.js
+|   |-4-
+|-recursion
+| |-
+
 
 ```
 
