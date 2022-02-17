@@ -23,6 +23,8 @@ exercises
 |   |-3-average-pair.js
 |   |-4-
 |-recursion
+| |-1-list-all-odds-helper.js
+| |-2-list-all-odds.js
 | |-
 
 
