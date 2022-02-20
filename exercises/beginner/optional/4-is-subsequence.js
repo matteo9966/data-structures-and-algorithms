@@ -4,24 +4,29 @@
  * @param {string} str2
  */
 function isSubsequence(str1, str2) {
-  if (str2.length === 0) {
+  const arr1 = str1.slice('');
+  const arr2 = str2.slice('');
+
+  if (arr2.length === 0) {
     return false;
   }
-  if (str1.length === 0) {
+  if (arr1.length === 0) {
     return true;
   }
   let i = 0,
     j = 0;
-  while (j < str2.length) {
-    if (str2[j] === str1[i]) {
-      if (i === str1.length) {
+    
+  while (j < arr2.length) {
+     console.log(arr1[i],arr2[j]);
+    if (arr2[j] === arr1[i]) {
+      i++;
+      if (i === arr1.length) {
         return true;
       }
-      i++;
     }
     j++;
-    return false;
   }
+  return false;
 }
 
 /* 
@@ -45,3 +50,5 @@ function isSubsequence(str1, str2) {
  
   
   */
+
+ console.log(isSubsequence('dogo','do re go'))
