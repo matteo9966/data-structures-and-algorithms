@@ -22,7 +22,9 @@ exercises
 |   |-1-same-frequency.js
 |   |-2-are-there-duplicates.js
 |   |-3-average-pair.js
-|   |-4-
+|   |-4-is-subsequence.js
+|   |-5-max-subarray-sum.js
+|   |-6-min-sub-array-len.js
 |
 |-recursion
 | |-1-list-all-odds-helper.js
@@ -35,7 +37,9 @@ exercises
 | | |-4-recursive-range.js
 | | |-5-fib.js
 | | 
-| |-intermediate    
+| |-challenging
+|   |-1-reverse.js
+|   |-2-palindrome.js    
 
 ```
 
