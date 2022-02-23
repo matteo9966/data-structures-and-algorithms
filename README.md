@@ -24,7 +24,7 @@ exercises
 |   |-3-average-pair.js
 |   |-4-is-subsequence.js
 |   |-5-max-subarray-sum.js
-|   |-6-min-sub-array-len.js
+|   |-6-min-sub-array-len.js // NOT SOLVED
 |
 |-recursion
 | |-1-list-all-odds-helper.js
@@ -40,6 +40,8 @@ exercises
 | |-challenging
 |   |-1-reverse.js
 |   |-2-palindrome.js    
+|   |-3-some-recursive.js    
+|   |-4-flatten.js //NOT SOLVED    
 
 ```
 
