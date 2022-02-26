@@ -41,7 +41,11 @@ exercises
 |   |-1-reverse.js
 |   |-2-palindrome.js    
 |   |-3-some-recursive.js    
-|   |-4-flatten.js //NOT SOLVED    
+|   |-4-flatten.js     
+|   |-5-capitalize-first.js     
+|   |-6-nested-even-sum.js     
+|   |-7-capitalize.js     
+|   |-8-stringify.js //NOT SOLVED         
 
 ```
 
