@@ -45,7 +45,8 @@ exercises
 |   |-5-capitalize-first.js     
 |   |-6-nested-even-sum.js     
 |   |-7-capitalize.js     
-|   |-8-stringify.js //NOT SOLVED         
+|   |-8-stringify.js        
+|   |-9-collect.js        
 
 ```
 
