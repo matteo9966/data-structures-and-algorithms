@@ -13,10 +13,15 @@
 ```
 Algoritmi
 |
+|-sorting-algorithms
+| |
+| |-1-bubble-sort.js
+|
 |-searching
 | | 
 | |-1-linear-search.js
 | |-2-binary-search.js
+| |-3-naive-search.js
 |   
 |-exercises
 |  |-beginner
