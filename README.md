@@ -16,6 +16,11 @@ Algoritmi
 |-sorting-algorithms
 | |
 | |-1-bubble-sort.js
+| |-2-selection-sort.js
+| |
+| |
+| |
+| |
 |
 |-searching
 | | 
