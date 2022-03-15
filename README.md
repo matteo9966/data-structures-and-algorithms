@@ -17,8 +17,8 @@ Algoritmi
 | |
 | |-1-bubble-sort.js
 | |-2-selection-sort.js
-| |
-| |
+| |-3-insertion-sort.js
+| |-4-merge-sort.js
 | |
 | |
 |

@@ -1,5 +1,17 @@
 /**
- * @description bubbleSort algorithm
+ * @description do
+
+  swapped = false
+
+  for i = 1 to indexOfLastUnsortedElement-1
+
+    if leftElement > rightElement
+
+      swap(leftElement, rightElement)
+
+      swapped = true; ++swapCounter
+
+while swapped
  * @param {Array} arr
  */
 function bubbleSort(arr){
