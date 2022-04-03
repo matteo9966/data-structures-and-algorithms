@@ -95,6 +95,7 @@ class LinkedList {
      * 
      * @param {number} index 
      * @description get node at index of a linked list
+     * @returns {ListNode|undefined}
       */
    get(index){
        if(index<0 || index>this.length){
@@ -146,6 +147,48 @@ class LinkedList {
      return true
    }
 
+   /**
+    * 
+    * @param {number} index 
+    */
+   remove(index){
+       if(index>=this.length || index<0){
+           return
+       }
+       if(index===0){
+          return this.shift()
+       }
+       if(index===this.length-1){
+          return this.pop()
+       }
+        
+       let prevNode = this.get(index-1)
+       let nextNode=prevNode.next;
+       prevNode.next=nextNode.next;
+       this.length=this.length-1
+       return nextNode
+    }
+
+    reverse(){
+        if(this.length<2){
+            return this
+        }
+        let temp,nextNode,CurrentNode;
+        CurrentNode=this.head;
+        nextNode=CurrentNode.next;
+        while(nextNode!=null){
+            temp=nextNode.next;
+            nextNode.next=CurrentNode;
+            CurrentNode=nextNode;
+            nextNode=temp;
+        }
+        let tempHead = this.head;
+        this.head=this.tail
+        this.tail=tempHead;
+        this.tail.next=null;
+        return this;
+    }
+
 }
 
 
@@ -161,16 +204,19 @@ const list = new LinkedList();
 // list.unshift("Potatoto")
 // list.unshift("IS")
 // list.unshift("Matteo")
-list.push(1)
-list.push(2)
-list.push(3)
-list.push(4)
-list.push(5)
-list.push(6)
+list.push(1) //0
+list.push(2) //1
+list.push(3) //2
+list.push(4) //3
+list.push(5) //4
+list.push(6) //5
+// list.remove(3);
+list.reverse();
+list.reverse();
+// list.reverse();
+// list.reverse();
 
-list.insert(2,2.5);
-
-console.log(list.length);
+// console.log(list.length);
 // list.push("dog")
 // list.push("is")
 // list.push("pablo")
