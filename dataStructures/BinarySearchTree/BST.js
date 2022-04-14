@@ -103,6 +103,39 @@ class BST {
 
     return findHelper(this.root);
   }
+
+  remove(value){
+    // non devo cancellare devo solo cambiare il valore con quello più grande dal lato sinistro se il nodo ha 2 figli!
+  
+     if(!value) return
+     if(!this.root) return;
+     let current = this.root;
+     while(current){
+       if(value ===current.value){
+       }
+
+       if(value<current.value){
+         if(current.left){
+           if(current.left.value===value) return current.left
+           current=current.left;
+         }else{
+           return 
+         }
+           
+       }
+        else if(value>current.value){
+        if(current.right){
+          if(current.right.value===value) return current.right;
+          current=current.right;
+
+        }else{
+          return 
+        }
+      }
+     }  
+
+
+  }
 }
 
 const bst = new BST();
