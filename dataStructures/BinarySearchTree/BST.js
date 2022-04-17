@@ -104,48 +104,65 @@ class BST {
     return findHelper(this.root);
   }
 
-  remove(value){
-    // non devo cancellare devo solo cambiare il valore con quello più grande dal lato sinistro se il nodo ha 2 figli!
-  
-     if(!value) return
-     if(!this.root) return;
-     let current = this.root;
-     while(current){
-       if(value ===current.value){
-       }
+  remove(value){ // fino a qui funziona, rimuovo nodi singoli in modo ricorsivo.
+   
+    if(!value) return null
+    if(this.root == null) return null;
 
-       if(value<current.value){
-         if(current.left){
-           if(current.left.value===value) return current.left
-           current=current.left;
-         }else{
-           return 
-         }
-           
-       }
-        else if(value>current.value){
-        if(current.right){
-          if(current.right.value===value) return current.right;
-          current=current.right;
+        /**
+     *
+     * @param {BSTNode} current
+     */
+    const removeHelper  = (current)=>{
+        if(current.value<value){
+          current.right = removeHelper(current.right);
+          return current
 
-        }else{
-          return 
+        }
+        else if(current.value > value){
+          current.left = removeHelper(current.left)
+          return current
+        }
+        else {
+          if(current.left==null && current.right==null){
+            return null
+          }
+          if(current.left==null){
+            const temp = current.right;
+            current.right=null;
+            return temp;
+          }
+          if(current.right == null){
+            const temp = current.left;
+            current.left=null;
+            return temp;
+          }
+
+          //il nodo ha 2 figli, devo cercare il più piccolo a sinistra e rimuoverlo
+
         }
       }
-     }  
+      this.root = removeHelper(this.root);
+
+      return this.root;
+
 
 
   }
 }
 
 const bst = new BST();
-console.log(bst.insertIterative(5));
-console.log(bst.insertIterative(2));
-console.log(bst.insertIterative(7));
-console.log(bst.insertIterative(9));
-console.log(bst.insertIterative(1));
-console.log(">>>>><<<<<<$$FIND$$>>>>>>>><<<<<")
-console.log(bst.find(6))
+// console.log(bst.insertIterative(5));
+// console.log(bst.insertIterative(2));
+// console.log(bst.insertIterative(7));
+// console.log(bst.insertIterative(9));
+// console.log(bst.insertIterative(1));
+// console.log(">>>>><<<<<<$$FIND$$>>>>>>>><<<<<")
+// console.log(bst.find(6))
+
+bst.insert(5);
+bst.insert(2);
+console.log(bst.remove(2))
 
 
 // bst.insert(5)
