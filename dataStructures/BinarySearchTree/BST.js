@@ -1,3 +1,4 @@
+const util = require('util')
 class BSTNode {
   constructor(value) {
     this.value = value;
@@ -6,7 +7,7 @@ class BSTNode {
   }
 }
 
-class BST {
+ class BST {
   constructor() {
     this.root = null;
   }
@@ -104,50 +105,67 @@ class BST {
     return findHelper(this.root);
   }
 
-  remove(value){ // fino a qui funziona, rimuovo nodi singoli in modo ricorsivo.
-   
-    if(!value) return null
-    if(this.root == null) return null;
+  remove(value) {
+    // fino a qui funziona, rimuovo nodi singoli in modo ricorsivo.
 
-        /**
+    if (!value) return null;
+    if (this.root == null) return null;
+
+    /**
+     *
+     * @param {BSTNode} node
+     */
+    const findLargestNode = (node) => {
+      let largest = node;
+      while (node.right) {
+        largest = node.right;
+      }
+      return largest;
+    };
+    /**
      *
      * @param {BSTNode} current
+     * @description 
+     * recurse
+     *
      */
-    const removeHelper  = (current)=>{
-        if(current.value<value){
-          current.right = removeHelper(current.right);
-          return current
-
-        }
-        else if(current.value > value){
-          current.left = removeHelper(current.left)
-          return current
-        }
-        else {
-          if(current.left==null && current.right==null){
-            return null
-          }
-          if(current.left==null){
-            const temp = current.right;
-            current.right=null;
-            return temp;
-          }
-          if(current.right == null){
-            const temp = current.left;
-            current.left=null;
-            return temp;
-          }
-
-          //il nodo ha 2 figli, devo cercare il più piccolo a sinistra e rimuoverlo
-
-        }
+    const removeHelper = (current, value) => {
+      if(!current){
+        return null
       }
-      this.root = removeHelper(this.root);
+      if (current.value < value) {
+        current.right = removeHelper(current.right, value);
+        return current;
+      } else if (current.value > value) {
+        current.left = removeHelper(current.left, value);
+        return current;
+      } else { 
+        //I found the node!
+        if (current.left == null && current.right == null) { //node to delete has no children
+          return null; 
+        }
+        if (current.left == null) {
+          const temp = current.right;
+          current.right = null;
+          return temp;
+        }
+        if (current.right == null) {
+          const temp = current.left;
+          current.left = null;
+          return temp;
+        }
 
-      return this.root;
+        const largestNode = findLargestNode(current.left);
+        current.value = largestNode.value;
+        current.left = removeHelper(current.left, largestNode.value);
+        return current;
 
+        //il nodo ha 2 figli, devo cercare il più piccolo a sinistra e rimuoverlo
+      }
+    };
+    this.root = removeHelper(this.root, value);
 
-
+    return this.root;
   }
 }
 
@@ -160,10 +178,16 @@ const bst = new BST();
 // console.log(">>>>><<<<<<$$FIND$$>>>>>>>><<<<<")
 // console.log(bst.find(6))
 
-bst.insert(5);
-bst.insert(2);
-console.log(bst.remove(2))
+bst.insert(20);
+bst.insert(10);
+bst.insert(30);
+bst.insert(25);
+bst.insert(40);
+bst.insert(24);
+bst.insert(26);
 
+// console.log(util.inspect(bst.remove(25), {showHidden: false, depth: null, colors: true}))
+// console.log(bst.remove(25));
 
 // bst.insert(5)
 // bst.insert(7)
@@ -172,3 +196,5 @@ console.log(bst.remove(2))
 // bst.insert(1)
 // bst.insert(19)
 // console.log(bst);
+
+module.exports={BST};
