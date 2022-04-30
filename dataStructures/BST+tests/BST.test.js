@@ -110,3 +110,34 @@ test('BFS with 5 nodes',()=>{
 
 })
 
+test('Depth First preorder expected output from tree',()=>{
+  const bst = new BST();
+  bst.insert(50)
+  bst.insert(20)
+  bst.insert(70)
+  bst.insert(10)
+  bst.insert(30)
+  bst.insert(60)
+  bst.insert(100)
+   const expectation = [50,20,10,30,70,60,100]
+  expect(bst.DFSPreOrder()).toEqual(expectation);
+
+
+
+})
+test('Depth First POSTORDER expected output from tree',()=>{
+  const bst = new BST();
+  bst.insert(50)
+  bst.insert(20)
+  bst.insert(70)
+  bst.insert(10)
+  bst.insert(30)
+  bst.insert(60)
+  bst.insert(100)
+   const expectation = [10,30,20,60,100,70,50]
+  expect(bst.DFSPostOrder()).toEqual(expectation);
+
+
+
+})
+

@@ -111,7 +111,35 @@ class BSTNode {
   }
 
   DFSPreOrder(){
-    
+    const output = [];
+    /**
+     * 
+     * @param {BSTNode} node 
+     */
+    const DFSPreOrderHelper =(node)=>{
+      if(node===null) return
+      output.push(node.value);
+      DFSPreOrderHelper(node.left)
+      DFSPreOrderHelper(node.right);
+    }
+    DFSPreOrderHelper(this.root);
+    return output;
+  }
+  
+  DFSPostOrder(){
+    const output = [];
+    /**
+     * 
+     * @param {BSTNode} node 
+     */
+    const DFSHelper = (node)=>{
+        if(node==null) return
+        DFSHelper(node.left)
+        DFSHelper(node.right)
+        output.push(node.value);
+    }
+   DFSHelper(this.root);
+    return output;
   }
 
 };
