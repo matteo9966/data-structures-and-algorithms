@@ -7,6 +7,22 @@ class BSTNode {
   }
 }
 
+
+
+/**
+ * depth first vs breadth first
+ * ----------------------------
+ * dal punto di vista del tempo: 
+ * 
+ * depth per un albero con molti nodi ben bilanciato
+ * breadth va bene con un albero che ha molti nodi su un solo lato
+ * --
+ * da un punto di vista de tempo non cambia
+ * .....
+ * con preorder torna comodo per avere l'ordine in cui il root starà sempre come primo elemento del array
+ *  
+ */
+
  class BST {
   constructor() {
     this.root = null;
